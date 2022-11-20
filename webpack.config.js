@@ -21,7 +21,7 @@ const config = {
     }),
     new NodemonPlugin({
       script: "./build/index.js",
-      nodeArgs: ["--inspect", "--enable-source-maps"],
+      nodeArgs: ["--inspect"],
       watch: [path.resolve("./build")],
       ext: "js,jsx",
       delay: 1000,

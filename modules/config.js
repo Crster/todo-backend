@@ -11,4 +11,8 @@ export default {
     views: path.resolve("./views"),
     cache: process.env.NODE_ENV === "production",
   },
+  jwtToken: {
+    secret: process.env.JWT_SECRET,
+    expiresIn: 60 * 60,
+  },
 }

@@ -1,6 +1,6 @@
 import db from "../modules/database"
 
-const userDb = db("user")
+const userDb = db("users")
 
 export async function getUsers() {
   return await userDb.find().toArray()
