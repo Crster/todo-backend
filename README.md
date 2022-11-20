@@ -1,3 +1,7 @@
-# todo-backend
+# Todo Backend
+A project template for backend development in nodejs
 
-Backend for todo management app
+## Feature
+- using express js
+- using babel + webpack + eslint
+- winston for logging

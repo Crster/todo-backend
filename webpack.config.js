@@ -10,6 +10,11 @@ const config = {
     filename: "index.js",
     path: path.resolve("./build"),
   },
+  resolve: {
+    alias: {
+      "@views": path.resolve("./views"),
+    },
+  },
   plugins: [
     new ESLintPlugin({
       fix: true,

@@ -1,7 +1,7 @@
 import express from "express"
-import user from "./user"
+import welcome from "./welcome"
 
 const router = express.Router()
-router.use("/user", user)
+router.use(welcome)
 
 export default router

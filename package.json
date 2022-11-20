@@ -1,7 +1,7 @@
 {
-  "name": "project-manager-backend",
+  "name": "todo-backend",
   "version": "1.0.0",
-  "description": "Server for managing task and meeting",
+  "description": "Backend development starter kit using express",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,15 +10,14 @@
     "start:dev": "webpack --mode=development"
   },
   "keywords": [
-    "Project",
-    "Management",
-    "Code",
-    "Sample"
+    "Sample",
+    "Starter Kit",
+    "Empty Project"
   ],
   "author": "Crster (adhartmain@live.com)",
   "license": "ISC",
   "dependencies": {
-    "@stdlib/string-replace": "0.0.11",
+    "eta": "^1.12.3",
     "express": "^4.18.2",
     "winston": "^3.8.2"
   },
