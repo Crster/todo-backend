@@ -1,15 +1,14 @@
 import express from "express"
 import bodyParser from "body-parser"
-import * as eta from "eta"
+import chtml from "@crster9600/crster-html"
 
 import config from "./modules/config"
 import logger from "./modules/logger"
 import routes from "./routes"
 
 const server = express()
-eta.configure(config.eta)
 
-server.engine("html", eta.renderFile)
+server.engine("html", chtml.expressViewEngine)
 server.set("view engine", "html")
 server.set("views", config.viewPath)
 

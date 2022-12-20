@@ -1,16 +1,14 @@
 import db from "../modules/database"
 
-const userDb = db("users")
-
 export async function getUsers() {
-  return await userDb.find().toArray()
+  return await db("user").find().toArray()
 }
 
 export async function getUser(filter) {
-  return await userDb.findOne(filter)
+  return await db("user").findOne(filter)
 }
 
 export async function addUser(user) {
-  const result = await userDb.insertOne(user)
+  const result = await db("user").insertOne(user)
   return result.insertedId
 }
