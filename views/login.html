@@ -1,0 +1,145 @@
+<view {layout}>
+  <block {script}>
+    <script>
+      function handleLogin(e) {
+        e.preventDefault()
+        $.post("/login", $("formLogin").serialize()).done((data) => {
+          
+        })
+      }
+    </script>
+  </block>
+
+  <block {style}>
+    <style>
+      .btn {
+        --bs-btn-padding-x: 4rem;
+        --bs-btn-padding-y: 1rem;
+        --bs-btn-border-radius: 10rem;
+      }
+
+      .btn-link {
+        --bs-btn-padding-x: 0;
+        --bs-btn-padding-y: 0;
+      }
+
+      #app > div.row {
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+      }
+
+      #divMessage {
+        color: var(--bs-white);
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("public/img/bg-welcome.jpg");
+        background-position: center;
+        background-size: cover;
+        padding: 0px 3rem;
+      }
+
+      .message {
+        margin-top: 20vh;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+
+      .message p {
+        margin: 0;
+      }
+
+      .message p:nth-child(2) {
+        font-size: 3rem;
+      }
+
+      .message hr {
+        height: 0.3rem;
+        color: var(--bs-primary);
+        background-color: var(--bs-primary);
+        max-width: 200px;
+        opacity: 0.8;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #divLogin {
+        padding: 10rem;
+      }
+    </style>
+  </block>
+
+  <block {body}>
+    <div class="row">
+      <div id="divMessage" class="col">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/">Your Logo</a>
+          </div>
+        </nav>
+
+        <div class="message">
+          <p>Nice to see you again</p>
+          <p>Welcome back</p>
+          <hr />
+          <p>
+            Dolore dignissimos doloremque illum commodi corporis, atque, itaque
+            necessitatibus ex corrupti iusto consectetur molestias, at fuga? Ut
+            cum placeat blanditiis error aperiam.
+          </p>
+        </div>
+      </div>
+
+      <div id="divLogin" class="col-6">
+        <h2>Login Account</h2>
+        <p class="text-muted my-5">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis eaque
+          praesentium maxime quod fuga. Voluptatum in, quisquam temporibus ipsam
+          maiores aut expedita, assumenda non culpa natus harum eveniet, quaerat
+          omnis!
+        </p>
+        <form id="formLogin" class="d-grid gap-3" onsubmit="handleLogin(event)">
+          <div class="form-floating">
+            <input
+              class="form-control"
+              type="email"
+              placeholder="Email address"
+              id="inputEmail"
+            />
+            <label for="inputEmail">Email address</label>
+          </div>
+
+          <div class="form-floating">
+            <input
+              class="form-control"
+              type="password"
+              placeholder="Password"
+              id="inputPassword"
+            />
+            <label for="inputPassword">Password</label>
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="inputRememberMe"
+              />
+              <label class="form-check-label" for="inputRememberMe"
+                >Remember Me</label
+              >
+            </div>
+
+            <a class="btn btn-link" href="/forgot">Forgot Password?</a>
+          </div>
+
+          <button class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+  </block>
+</view>
