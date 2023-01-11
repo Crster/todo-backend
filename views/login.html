@@ -74,7 +74,7 @@
 
   <block {body}>
     <div class="row">
-      <div id="divMessage" class="col">
+      <div id="divMessage" class="col md:my-0">
         <nav class="navbar navbar-expand-lg navbar-dark">
           <div class="container-fluid">
             <a class="navbar-brand" href="/">Your Logo</a>
@@ -104,20 +104,22 @@
         <form id="formLogin" class="d-grid gap-3" onsubmit="handleLogin(event)">
           <div class="form-floating">
             <input
+              id="inputEmail"
               class="form-control"
               type="email"
               placeholder="Email address"
-              id="inputEmail"
+              name="email"
             />
             <label for="inputEmail">Email address</label>
           </div>
 
           <div class="form-floating">
             <input
+              id="inputPassword"
               class="form-control"
               type="password"
               placeholder="Password"
-              id="inputPassword"
+              name="password"
             />
             <label for="inputPassword">Password</label>
           </div>
