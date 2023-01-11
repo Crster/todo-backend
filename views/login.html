@@ -1,147 +1,76 @@
 <view {layout}>
-  <block {script}>
-    <script>
-      function handleLogin(e) {
-        e.preventDefault()
-        $.post("/login", $("formLogin").serialize()).done((data) => {
-          
-        })
-      }
-    </script>
-  </block>
-
-  <block {style}>
-    <style>
-      .btn {
-        --bs-btn-padding-x: 4rem;
-        --bs-btn-padding-y: 1rem;
-        --bs-btn-border-radius: 10rem;
-      }
-
-      .btn-link {
-        --bs-btn-padding-x: 0;
-        --bs-btn-padding-y: 0;
-      }
-
-      #app > div.row {
-        height: 100vh;
-        width: 100%;
-        text-align: center;
-      }
-
-      #divMessage {
-        color: var(--bs-white);
-        background-image: linear-gradient(
-            rgba(0, 0, 0, 0.8),
-            rgba(0, 0, 0, 0.5)
-          ),
-          url("public/img/bg-welcome.jpg");
-        background-position: center;
-        background-size: cover;
-        padding: 0px 3rem;
-      }
-
-      .message {
-        margin-top: 20vh;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-      }
-
-      .message p {
-        margin: 0;
-      }
-
-      .message p:nth-child(2) {
-        font-size: 3rem;
-      }
-
-      .message hr {
-        height: 0.3rem;
-        color: var(--bs-primary);
-        background-color: var(--bs-primary);
-        max-width: 200px;
-        opacity: 0.8;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      #divLogin {
-        padding: 10rem;
-      }
-    </style>
-  </block>
-
   <block {body}>
-    <div class="row">
-      <div id="divMessage" class="col md:my-0">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="/">Your Logo</a>
-          </div>
-        </nav>
+    <main class="d-flex w-100">
+      <div class="container d-flex flex-column">
+        <div class="row">
+          <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table">
+            <div class="d-table-cell align-middle">
+              <div class="text-center mt-4">
+                <h1 class="h2">Welcome back, Charles</h1>
+                <p class="lead">Sign in to your account to continue</p>
+              </div>
 
-        <div class="message">
-          <p>Nice to see you again</p>
-          <p>Welcome back</p>
-          <hr />
-          <p>
-            Dolore dignissimos doloremque illum commodi corporis, atque, itaque
-            necessitatibus ex corrupti iusto consectetur molestias, at fuga? Ut
-            cum placeat blanditiis error aperiam.
-          </p>
+              <div class="card">
+                <div class="card-body">
+                  <div class="m-sm-4">
+                    <div class="text-center">
+                      <img
+                        src="/public/img/avatars/avatar.jpg"
+                        alt="Charles Hall"
+                        class="img-fluid rounded-circle"
+                        width="132"
+                        height="132"
+                      />
+                    </div>
+                    <form method="post" action="/login">
+                      <div class="mb-3">
+                        <label class="form-label">Username / Email</label>
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="username"
+                          placeholder="Enter your username"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input
+                          class="form-control form-control-lg"
+                          type="password"
+                          name="password"
+                          placeholder="Enter your password"
+                        />
+                        <small>
+                          <a href="/forgot-password">Forgot password?</a>
+                        </small>
+                      </div>
+                      <div>
+                        <label class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value="remember-me"
+                            name="remember-me"
+                            checked
+                          />
+                          <span class="form-check-label">
+                            Remember me next time
+                          </span>
+                        </label>
+                      </div>
+                      <div class="text-center mt-3">
+                        <button type="submit" class="btn btn-lg btn-primary">Sign in</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </main>
 
-      <div id="divLogin" class="col-6">
-        <h2>Login Account</h2>
-        <p class="text-muted my-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis eaque
-          praesentium maxime quod fuga. Voluptatum in, quisquam temporibus ipsam
-          maiores aut expedita, assumenda non culpa natus harum eveniet, quaerat
-          omnis!
-        </p>
-        <form id="formLogin" class="d-grid gap-3" onsubmit="handleLogin(event)">
-          <div class="form-floating">
-            <input
-              id="inputEmail"
-              class="form-control"
-              type="email"
-              placeholder="Email address"
-              name="email"
-            />
-            <label for="inputEmail">Email address</label>
-          </div>
-
-          <div class="form-floating">
-            <input
-              id="inputPassword"
-              class="form-control"
-              type="password"
-              placeholder="Password"
-              name="password"
-            />
-            <label for="inputPassword">Password</label>
-          </div>
-
-          <div class="d-flex justify-content-between">
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inputRememberMe"
-              />
-              <label class="form-check-label" for="inputRememberMe"
-                >Remember Me</label
-              >
-            </div>
-
-            <a class="btn btn-link" href="/forgot">Forgot Password?</a>
-          </div>
-
-          <button class="btn btn-primary">Login</button>
-        </form>
-      </div>
-    </div>
+    <view {footer} />
   </block>
 </view>

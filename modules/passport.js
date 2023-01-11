@@ -1,12 +1,17 @@
 import * as passport from "passport"
-import BearerStrategy from "passport-http-bearer"
-import { getUser } from "../controllers"
+import LocalStrategy from "passport-local"
+import { getUserByUsernameAndPassword } from "../services/user"
 
 passport.use(
-  new BearerStrategy(function (token, done) {
-    getUser({ token })
-      .then((user) => done(null, user, { scope: "all" }))
-      .catch((err) => done(err))
+  "local",
+  new LocalStrategy(function (username, password, done) {
+    getUserByUsernameAndPassword(username, password)
+      .then((user) => {
+        done(null, user)
+      })
+      .catch((err) => {
+        done(err)
+      })
   }),
 )
 

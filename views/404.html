@@ -1,0 +1,28 @@
+<view {layout}>
+  <block {style}>
+    <style>
+       #app {
+        height: 100%;
+       }
+
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+    </style>
+  </block>
+
+  <block {body}>
+    <div class="center">
+      <div class="text-center">
+        <h1 id="statusCode" class="display-5">404</h1>
+        <p id="message" class="fs-3 text-muted">Page not found</p>
+        <a href="/" class="btn btn-link">Go back</a>
+      </div>
+    </div>
+  </block>
+
+  <view {footer} />
+</view>
