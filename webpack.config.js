@@ -12,7 +12,7 @@ const config = {
   },
   resolve: {
     alias: {
-      "@modules": path.resolve("./modules"),
+      "@services": path.resolve("./services"),
     },
   },
   plugins: [
