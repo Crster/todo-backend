@@ -17,6 +17,14 @@
       $(window).scroll(function () {
         hoverNavBar()
       })
+
+      $("#navBar").on("show.bs.collapse", function (event) {
+        $(this).addClass("hoverbar")
+      })
+
+      $("#navBar").on("hide.bs.collapse", function (event) {
+        hoverNavBar()
+      })
     </script>
   </block>
 
@@ -24,9 +32,9 @@
     <style>
       .hoverbar {
         background-color: var(--bs-primary);
-        box-shadow: 0px 2px 11px 1px rgba(0,0,0,1);
-        -webkit-box-shadow: 0px 2px 11px 1px rgba(0,0,0,1);
-        -moz-box-shadow: 0px 2px 11px 1px rgba(0,0,0,1);
+        box-shadow: 0px 2px 11px 1px rgba(0, 0, 0, 1);
+        -webkit-box-shadow: 0px 2px 11px 1px rgba(0, 0, 0, 1);
+        -moz-box-shadow: 0px 2px 11px 1px rgba(0, 0, 0, 1);
       }
 
       nav.navbar .nav-link {
@@ -64,20 +72,9 @@
         padding-top: 20vh;
       }
 
-      #pricing .card {
-        width: 30rem;
-        margin: 1rem;
-      }
-
-      @media (max-width: 768px) {
-        #pricing .card {
-          width: 100%;
-          margin: 0.5rem;
-        }
-      }
-
       #about h1 {
         font-size: 3rem;
+        color: var(--bs-white);
       }
 
       #about .btn {
@@ -88,6 +85,18 @@
         text-transform: uppercase;
         border: none;
         border-radius: 10rem;
+      }
+
+      #pricing .card {
+        width: 30rem;
+        margin: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        #pricing .card {
+          width: 100%;
+          margin: 0.5rem;
+        }
       }
 
       #feature {
@@ -108,6 +117,10 @@
       #contact {
         padding-left: 30rem;
         padding-right: 30rem;
+      }
+
+      #contact .btn {
+        padding: 0.6rem 2.25rem;
       }
 
       @media (max-width: 1200px) {
@@ -327,8 +340,8 @@
           <button class="btn btn-primary">Submit</button>
         </form>
       </section>
-    </main>
 
-    <view {footer} />
+      <view {components\footer} />
+    </main>
   </block>
 </view>

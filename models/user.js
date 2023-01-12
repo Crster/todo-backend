@@ -13,7 +13,7 @@ class User {
 export async function getUserByUsername(username) {
   let ret = null;
 
-  const row = db("users").findOne({ username })
+  const row = await db("users").findOne({ username })
   if (row) {
     ret = new User(row)
   }
