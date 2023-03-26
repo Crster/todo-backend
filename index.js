@@ -1,6 +1,6 @@
 import express from "express"
 import bodyParser from "body-parser"
-import chtml from "@crster9600/crster-html"
+import htmlike from "@crster/htmlike"
 
 import config from "./services/config"
 import logger from "./services/logger"
@@ -8,7 +8,7 @@ import routes from "./routes"
 
 const server = express()
 
-server.engine("html", chtml.expressViewEngine)
+server.engine("html", htmlike.expressViewEngine)
 server.set("view engine", "html")
 server.set("views", config.viewPath)
 
