@@ -6,12 +6,10 @@
   "configurations": [
     {
       "name": "Debug Server",
-      "port": 9229,
-      "type": "node",
-      "request": "attach",
-      "skipFiles": ["<node_internals>/**"],
-      "restart": true,
-      "sourceMaps": true,
+      "command": "npm run start:dev",
+      "request": "launch",
+      "type": "node-terminal",
+      "restart": true
     }
   ]
 }

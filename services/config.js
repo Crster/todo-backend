@@ -7,7 +7,7 @@ export default {
   nodeModule: path.resolve("./node_modules"),
   wwwroot: path.resolve("./public"),
   dbUri: process.env.MONGO_URI,
-  dbName: process.env.DB_NAME ?? "sampledb",
+  dbName: process.env.MONGO_DB ?? "sampledb",
   jwtToken: {
     secret: process.env.JWT_SECRET,
     expiresIn: 60 * 60,
